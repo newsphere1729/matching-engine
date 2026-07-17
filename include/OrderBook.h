@@ -16,5 +16,9 @@ private:
 
 public:
     void addOrder(Order order);
+
+    //NEW 
+    void matchBuyOrder(Order& order);
+    void matchSellOrder(Order& order);
     void printBook(int depth = 5);
 };
