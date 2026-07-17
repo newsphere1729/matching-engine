@@ -2,10 +2,10 @@
 
 struct Order {
     long orderId;
-    bool isBuy;       // true = BUY, false = SELL
+    bool isBuy;
     double price;
     int quantity;
-    long timestamp;   // used for time priority at same price level
+    long timestamp;
 
     Order(long id, bool buy, double p, int qty, long ts)
         : orderId(id), isBuy(buy), price(p), quantity(qty), timestamp(ts) {}

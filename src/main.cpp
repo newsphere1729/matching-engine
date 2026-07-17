@@ -9,6 +9,12 @@ int main() {
 
     book.addOrder(Order(3, false, 99.0, 10, 3));    // Matches remaining 4
     book.printBook();
+    book.addOrder(Order(4, true, 98.0, 5, 5));
+    book.printBook();
 
+    book.cancelOrder(4);
+    book.printBook();
+
+    book.cancelOrder(999); // should fail gracefully
     return 0;
 }

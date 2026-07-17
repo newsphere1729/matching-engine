@@ -1,24 +1,20 @@
 #pragma once
-
 #include "Order.h"
 #include <map>
 #include <queue>
-#include <vector>
+#include <unordered_map>
 #include <iostream>
 
 class OrderBook {
 private:
-    // Buy side: highest price first
     std::map<double, std::queue<Order>, std::greater<double>> buyBook;
-
-    // Sell side: lowest price first
     std::map<double, std::queue<Order>> sellBook;
+    std::unordered_map<long, std::pair<double, bool>> orderIndex;
 
 public:
     void addOrder(Order order);
-
-    //NEW 
     void matchBuyOrder(Order& order);
     void matchSellOrder(Order& order);
+    void cancelOrder(long orderId);
     void printBook(int depth = 5);
 };
